@@ -1,10 +1,13 @@
-#include "../Tools/Tools.h"
+﻿#include "../../ThirdParty/TDA/HookX.h"
+#include "../../ThirdParty/TDA/MemX.h"
+
+using namespace TDA::MemX;
+using namespace TDA::HookX;
 
 static DWORD g_dwExeBase = (DWORD)GetModuleHandleW(NULL);
 
 
-static DWORD g_dwReadCharRaw = NULL;
-static DWORD g_dwReadCharRet = NULL;
+static DWORD g_dwReadCharRaw = NULL, g_dwReadCharRet = NULL;
 VOID __declspec(naked) ProcDBCS_0()
 {
 	_asm
@@ -13,7 +16,7 @@ VOID __declspec(naked) ProcDBCS_0()
 		cmp ecx, 0x81;
 		jb not_DBCS;
 
-		//is_DBCS
+		//is_DBCS:
 		movzx ecx, word ptr[eax];
 		inc eax;
 

@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{60fcce75-d32d-4d2a-b7da-fc4bf645b5cb}</ProjectGuid>
-    <RootNamespace>EFLAAHookEN2JP</RootNamespace>
+    <ProjectGuid>{6025b745-02f7-47ea-9911-35649da8cea0}</ProjectGuid>
+    <RootNamespace>TDA</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -78,7 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -92,7 +92,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -127,12 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tools\Tools.vcxproj">
-      <Project>{3bc42c3c-d85f-4ed5-9661-8eb5ea139860}</Project>
-    </ProjectReference>
+    <ClInclude Include="MemAuto.h" />
+    <ClInclude Include="ConsoleX.h" />
+    <ClInclude Include="FileEnum.h" />
+    <ClInclude Include="FileX.h" />
+    <ClInclude Include="HookAPI.h" />
+    <ClInclude Include="HookAPI_DEF.h" />
+    <ClInclude Include="HookX.h" />
+    <ClInclude Include="MemX.h" />
+    <ClInclude Include="StringX.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EFLAAHook_EN2JP.cpp" />
+    <ClCompile Include="MemAuto.cpp" />
+    <ClCompile Include="ConsoleX.cpp" />
+    <ClCompile Include="FileEnum.cpp" />
+    <ClCompile Include="FileX.cpp" />
+    <ClCompile Include="HookAPI.cpp" />
+    <ClCompile Include="HookX.cpp" />
+    <ClCompile Include="MemX.cpp" />
+    <ClCompile Include="StringX.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

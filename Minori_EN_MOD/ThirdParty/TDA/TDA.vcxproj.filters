@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="FileX">
+      <UniqueIdentifier>{c94d18e4-fb6f-461e-87df-459dd7a17698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemX">
+      <UniqueIdentifier>{d3e7899b-ef1e-4236-bd68-ab30b90cff58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StringX">
+      <UniqueIdentifier>{9b2a9c00-c415-4256-b8ec-fee58f187e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConsoleX">
+      <UniqueIdentifier>{554e75c6-5048-4ea9-b63f-69d6ce7bf5f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HookX">
+      <UniqueIdentifier>{efae4b25-55e5-4603-a13c-f4167bd07f4f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileX.h">
+      <Filter>FileX</Filter>
+    </ClInclude>
+    <ClInclude Include="MemX.h">
+      <Filter>MemX</Filter>
+    </ClInclude>
+    <ClInclude Include="StringX.h">
+      <Filter>StringX</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleX.h">
+      <Filter>ConsoleX</Filter>
+    </ClInclude>
+    <ClInclude Include="MemAuto.h">
+      <Filter>MemX</Filter>
+    </ClInclude>
+    <ClInclude Include="FileEnum.h">
+      <Filter>FileX</Filter>
+    </ClInclude>
+    <ClInclude Include="HookX.h">
+      <Filter>HookX</Filter>
+    </ClInclude>
+    <ClInclude Include="HookAPI.h">
+      <Filter>HookX</Filter>
+    </ClInclude>
+    <ClInclude Include="HookAPI_DEF.h">
+      <Filter>HookX</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileX.cpp">
+      <Filter>FileX</Filter>
+    </ClCompile>
+    <ClCompile Include="MemX.cpp">
+      <Filter>MemX</Filter>
+    </ClCompile>
+    <ClCompile Include="StringX.cpp">
+      <Filter>StringX</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleX.cpp">
+      <Filter>ConsoleX</Filter>
+    </ClCompile>
+    <ClCompile Include="MemAuto.cpp">
+      <Filter>MemX</Filter>
+    </ClCompile>
+    <ClCompile Include="FileEnum.cpp">
+      <Filter>FileX</Filter>
+    </ClCompile>
+    <ClCompile Include="HookX.cpp">
+      <Filter>HookX</Filter>
+    </ClCompile>
+    <ClCompile Include="HookAPI.cpp">
+      <Filter>HookX</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

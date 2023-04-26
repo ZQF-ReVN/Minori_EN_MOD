@@ -144,8 +144,8 @@
     <ClCompile Include="EdenPMHook_EN2CN.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tools\Tools.vcxproj">
-      <Project>{3bc42c3c-d85f-4ed5-9661-8eb5ea139860}</Project>
+    <ProjectReference Include="..\..\ThirdParty\TDA\TDA.vcxproj">
+      <Project>{6025b745-02f7-47ea-9911-35649da8cea0}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
