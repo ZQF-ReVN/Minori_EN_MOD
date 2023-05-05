@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EFFAAHook_EN2JP", "Modules\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EFLAAHook_EN2JP", "Modules\EFLAAHook_EN2JP\EFLAAHook_EN2JP.vcxproj", "{60FCCE75-D32D-4D2A-B7DA-FC4BF645B5CB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleLoader", "Modules\SimpleLoader\SimpleLoader.vcxproj", "{92DAFE37-7E1D-4112-A38A-8E1B98025A65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{60FCCE75-D32D-4D2A-B7DA-FC4BF645B5CB}.Release|x64.Build.0 = Release|x64
 		{60FCCE75-D32D-4D2A-B7DA-FC4BF645B5CB}.Release|x86.ActiveCfg = Release|Win32
 		{60FCCE75-D32D-4D2A-B7DA-FC4BF645B5CB}.Release|x86.Build.0 = Release|Win32
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Debug|x64.ActiveCfg = Debug|x64
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Debug|x64.Build.0 = Debug|x64
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Debug|x86.ActiveCfg = Debug|Win32
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Debug|x86.Build.0 = Debug|Win32
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Release|x64.ActiveCfg = Release|x64
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Release|x64.Build.0 = Release|x64
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Release|x86.ActiveCfg = Release|Win32
+		{92DAFE37-7E1D-4112-A38A-8E1B98025A65}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
