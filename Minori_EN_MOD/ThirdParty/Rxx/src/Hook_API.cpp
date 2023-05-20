@@ -1,12 +1,14 @@
-﻿#include "HookAPI.h"
-#include "HookAPI_DEF.h"
-#include "HookX.h"
+﻿#include "../include/Hook_API.h"
+#include "../include/Hook.h"
+#include "../include/Hook_API_DEF.h"
 
-namespace TDA
+#include <Windows.h>
+
+
+namespace Rut
 {
 	namespace HookX
 	{
-
 		//*********Start Hook CreateFontA*******
 		static DWORD sg_dwCharSet = 0;
 		static LPCSTR sg_lpFontName = nullptr;
@@ -20,7 +22,7 @@ namespace TDA
 
 		bool HookCreateFontA(const uint32_t uiCharSet, const char* cpFontName)
 		{
-			sg_dwCharSet = uiCharSet; 
+			sg_dwCharSet = uiCharSet;
 			sg_lpFontName = cpFontName;
 			return DetourAttachFunc(&rawCreateFontA, newCreateFontA);
 		}
@@ -38,7 +40,7 @@ namespace TDA
 
 		bool HookCreateFontIndirectA(const uint32_t uiCharSet, const char* cpFontName)
 		{
-			sg_dwCharSet = uiCharSet; 
+			sg_dwCharSet = uiCharSet;
 			sg_lpFontName = cpFontName;
 			return DetourAttachFunc(&rawCreateFontIndirectA, newCreateFontIndirectA);
 		}
@@ -67,6 +69,5 @@ namespace TDA
 			return DetourAttachFunc(&RawCreateWindowExA, NewCreateWindowExA);
 		}
 		//*********END Hook CreateWindowExA*********
-
 	}
 }

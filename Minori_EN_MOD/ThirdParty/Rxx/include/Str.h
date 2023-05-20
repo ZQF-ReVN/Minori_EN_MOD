@@ -1,10 +1,12 @@
-#pragma once
+﻿#pragma once
 #include <string>
 
+#include "Str_Trim.h"
 
-namespace TDA
+//Ria's Utility Library X
+namespace Rut
 {
-	namespace StringX
+	namespace StrX
 	{
 		std::locale& GetCVT_UTF8();
 

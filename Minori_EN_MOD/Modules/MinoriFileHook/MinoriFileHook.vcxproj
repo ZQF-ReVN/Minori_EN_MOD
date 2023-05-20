@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6025b745-02f7-47ea-9911-35649da8cea0}</ProjectGuid>
-    <RootNamespace>TDA</RootNamespace>
+    <ProjectGuid>{97f19ad4-5896-4d1d-99bd-b2de766fdd7f}</ProjectGuid>
+    <RootNamespace>MinoriFileHook</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,25 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MemAuto.h" />
-    <ClInclude Include="ConsoleX.h" />
-    <ClInclude Include="FileEnum.h" />
-    <ClInclude Include="FileX.h" />
-    <ClInclude Include="HookAPI.h" />
-    <ClInclude Include="HookAPI_DEF.h" />
-    <ClInclude Include="HookX.h" />
-    <ClInclude Include="MemX.h" />
-    <ClInclude Include="StringX.h" />
+    <ClCompile Include="MinoriFileHook.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MemAuto.cpp" />
-    <ClCompile Include="ConsoleX.cpp" />
-    <ClCompile Include="FileEnum.cpp" />
-    <ClCompile Include="FileX.cpp" />
-    <ClCompile Include="HookAPI.cpp" />
-    <ClCompile Include="HookX.cpp" />
-    <ClCompile Include="MemX.cpp" />
-    <ClCompile Include="StringX.cpp" />
+    <ClInclude Include="MinoriFileHook.h" />
+    <ClInclude Include="MinoriFileHook_DEF.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

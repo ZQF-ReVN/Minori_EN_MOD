@@ -2,8 +2,10 @@
 #include <cstdint>
 #include <string>
 
+#include "File.h"
 
-namespace TDA
+//Ria's Utility Library X
+namespace Rut
 {
 	namespace MemX
 	{
@@ -22,14 +24,13 @@ namespace TDA
 			~AutoMem();
 
 			uint8_t* ReSize(size_t szRes);
-			uint8_t* LoadFile(const std::wstring& wsFile);
-			uint8_t* LoadFile(const std::wstring& wsFile, size_t szFile);
-			bool     SaveToFile(const std::wstring& wsFile);
-
 			size_t   GetMaxSize() { return m_szMaxAlloc; }
 			uint8_t* GetPointer() { return m_pBuffer; }
-
 			void Clear();
+
+			uint8_t* LoadFile(const std::wstring& wsFile);
+			uint8_t* LoadFileViaSize(const std::wstring& wsFile, size_t szFile);
+			void     SaveToFile(const std::wstring& wsFile);
 		};
 	}
 }

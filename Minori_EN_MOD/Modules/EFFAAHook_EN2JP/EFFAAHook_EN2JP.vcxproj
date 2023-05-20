@@ -146,8 +146,8 @@
     <ClCompile Include="EFFAAHook_EN2JP.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ThirdParty\TDA\TDA.vcxproj">
-      <Project>{6025b745-02f7-47ea-9911-35649da8cea0}</Project>
+    <ProjectReference Include="..\..\..\..\MalieTools\MalieTools\ThirdParty\Rxx\Rxx.vcxproj">
+      <Project>{6b1ab12f-a3bb-4513-9592-3c15a1100fbe}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

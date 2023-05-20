@@ -1,9 +1,8 @@
 ﻿#pragma once
-#include <Windows.h>
 #include <cstdint>
 
-
-namespace TDA
+//Ria's Utility Library X
+namespace Rut
 {
 	namespace HookX
 	{

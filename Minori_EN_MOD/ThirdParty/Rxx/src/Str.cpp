@@ -1,12 +1,12 @@
-#include "StringX.h"
+﻿#include "../include/Str.h"
 
-#include <Windows.h>
 #include <codecvt>
+#include <Windows.h>
 
 
-namespace TDA
+namespace Rut
 {
-	namespace StringX
+	namespace StrX
 	{
 		std::locale& GetCVT_UTF8()
 		{
@@ -14,13 +14,8 @@ namespace TDA
 			(
 				std::locale::empty(),
 				new std::codecvt_utf8
-				<
-				wchar_t,
-				0x10ffff,
-				std::codecvt_mode(std::consume_header | std::generate_header | std::little_endian)
-				>
+				<wchar_t, 0x10ffff, std::codecvt_mode(std::consume_header | std::generate_header | std::little_endian)>
 			);
-
 			return cvtUTF8;
 		}
 

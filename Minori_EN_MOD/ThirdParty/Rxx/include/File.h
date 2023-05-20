@@ -1,16 +1,22 @@
 ﻿#pragma once
 #include <string>
-#include <fstream>
 
-#include "FileEnum.h"
+#include "String.h"
+#include "File_Enum.h"
+#include "File_Stream.hpp"
 
-
-namespace TDA
+//Ria's Utility Library X
+namespace Rut
 {
 	namespace FileX
 	{
-		bool         SaveFileViaPath(const char* pPath, void* pBuffer, size_t nSize);
-		bool         SaveFileViaPath(const wchar_t* pPath, void* pBuffer, size_t nSize);
+		void         SaveFileViaPath(const char* pwPath, void* pData, size_t nBytes);
+		void         SaveFileViaPath(const wchar_t* pcPath, void* pData, size_t nBytes);
+		void         SaveFileViaPath(const std::wstring& wsPath, void* pData, size_t nBytes);
+		void         SaveFileViaPath(const std::string& msPath, void* pData, size_t nBytes);
+
+		std::string  GetFileNameViaBaseA(uint32_t uiBase);
+		std::wstring GetFileNameViaBaseW(uint32_t uiBase);
 
 		size_t       GetCurrentDirectoryFolder(char* pPath);
 		size_t       GetCurrentDirectoryFolder(wchar_t* pPath);
@@ -34,19 +40,15 @@ namespace TDA
 		std::wstring PathRemoveFileName_RET(std::wstring& wsPath);
 
 
+		std::wstring PathRemoveExtension(const std::wstring& wsPath);
+
+
 		size_t       PathGetFileName(wchar_t* pPath);
 		size_t       PathGetFileName(char* pPath);
 		void         PathGetFileName(std::string& msPath, std::string& msFileName);
 		void         PathGetFileName(std::wstring& msPath, std::wstring& wsFileName);
 		std::string  PathGetFileName_RET(std::string& msPath);
 		std::wstring PathGetFileName_RET(std::wstring& wsPath);
-
-
-
-		std::streamsize GetFileSize(const wchar_t* wsFile);
-		std::streamsize GetFileSize(const char* msFile);
-		std::streamsize GetFileSize(std::ifstream& ifsFile);
-		std::streamsize GetFileSize(std::fstream& fsFile);
 	}
 }
 

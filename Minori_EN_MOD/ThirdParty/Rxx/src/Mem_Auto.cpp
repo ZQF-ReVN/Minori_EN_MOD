@@ -1,10 +1,7 @@
-﻿#include "MemAuto.h"
-#include "FileX.h"
-
-#include <fstream>
+﻿#include "../include/Mem_Auto.h"
 
 
-namespace TDA
+namespace Rut
 {
 	namespace MemX
 	{
@@ -44,7 +41,7 @@ namespace TDA
 
 		AutoMem::AutoMem(const std::wstring& wsFile, size_t szFile) : m_pBuffer(nullptr), m_szMaxAlloc(0)
 		{
-			LoadFile(wsFile, szFile);
+			LoadFileViaSize(wsFile, szFile);
 		}
 
 		AutoMem::~AutoMem()
@@ -84,30 +81,22 @@ namespace TDA
 
 		uint8_t* AutoMem::LoadFile(const std::wstring& wsFile)
 		{
-			return LoadFile(wsFile, -1);
+			return LoadFileViaSize(wsFile, -1);
 		}
 
-		uint8_t* AutoMem::LoadFile(const std::wstring& wsFile, size_t szFile)
+		uint8_t* AutoMem::LoadFileViaSize(const std::wstring& wsFile, size_t szFile)
 		{
-			std::ifstream ifs(wsFile, std::ios::binary);
-			if (!ifs.is_open()) return nullptr;
-
+			std::ifstream ifs = Rut::FileX::OpenFileBinaryStream(wsFile);
 			if (szFile == -1) { szFile = static_cast<size_t>(FileX::GetFileSize(ifs)); }
-
 			ifs.read(reinterpret_cast<char*>(ReSize(szFile)), szFile);
-
 			return GetPointer();
 		}
 
-		bool AutoMem::SaveToFile(const std::wstring& wsFile)
+		void AutoMem::SaveToFile(const std::wstring& wsFile)
 		{
-			std::ofstream ofs(wsFile, std::ios::binary);
-			if (!ofs.is_open()) return false;
-
+			std::ofstream ofs = Rut::FileX::CreateFileBinaryStream(wsFile);
 			ofs.write(reinterpret_cast<char*>(GetPointer()), GetMaxSize());
-
 			ofs.flush();
-			return true;
 		}
 	}
 }

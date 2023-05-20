@@ -1,7 +1,7 @@
-#include "MemX.h"
+﻿#include "../include/Mem.h"
 
 
-namespace TDA
+namespace Rut
 {
 	namespace MemX
 	{
@@ -31,7 +31,7 @@ namespace TDA
 			return FALSE;
 		}
 
-		DWORD MemSearch(DWORD pFind, SIZE_T szFind, PBYTE pToFind, SIZE_T szToFind, BOOL backward = FALSE)
+		DWORD MemSearch(DWORD pFind, SIZE_T szFind, PBYTE pToFind, SIZE_T szToFind, BOOL backward)
 		{
 			if ((pFind >= 0x7FFF0000) || (pFind <= 0x00010000) || !szToFind) return NULL;
 

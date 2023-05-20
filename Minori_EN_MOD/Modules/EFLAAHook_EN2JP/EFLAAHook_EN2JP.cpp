@@ -1,8 +1,8 @@
-﻿#include "../../ThirdParty/TDA/HookX.h"
-#include "../../ThirdParty/TDA/MemX.h"
+﻿#include "../../ThirdParty/Rxx/include/Hook.h"
+#include "../../ThirdParty/Rxx/include/Mem.h"
 
-using namespace TDA::MemX;
-using namespace TDA::HookX;
+using namespace Rut::MemX;
+using namespace Rut::HookX;
 
 static DWORD g_dwExeBase = (DWORD)GetModuleHandleW(NULL);
 

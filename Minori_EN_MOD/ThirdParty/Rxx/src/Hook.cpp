@@ -1,11 +1,13 @@
-﻿#include "HookX.h"
-#include "MemX.h"
+﻿#include "../include/Hook.h"
+#include "../include/Mem.h"
 
-#include "../../ThirdParty/detours/include/detours.h"
+#include <Windows.h>
+
+#include "../../../ThirdParty/detours/include/detours.h"
 #pragma comment(lib,"../../ThirdParty/detours/lib.X86/detours.lib")
 
 
-namespace TDA
+namespace Rut
 {
 	namespace HookX
 	{
