@@ -73,8 +73,8 @@ VOID StartHook()
 	// Replace Character Name Brackets
 	static BYTE bracket_r[] = { 0x20,0x81,0x7A };
 	static BYTE bracket_l[] = { 0x81,0x79,0x20 };
-	RxHook::SysMemWrite((LPVOID)(image_base + 0x167DBC), bracket_r, sizeof(bracket_r));
-	RxHook::SysMemWrite((LPVOID)(image_base + 0x167DC0), bracket_l, sizeof(bracket_l));
+	RxHook::SysMemWrite((LPVOID)(image_base + 0x168DEC), bracket_r, sizeof(bracket_r));
+	RxHook::SysMemWrite((LPVOID)(image_base + 0x168DF0), bracket_l, sizeof(bracket_l));
 
 	// Skip Map Char and Read DBCS
 	static BYTE asm_map_char[] =
