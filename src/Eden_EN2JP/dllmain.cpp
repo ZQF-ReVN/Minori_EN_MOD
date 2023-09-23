@@ -36,21 +36,21 @@ VOID __declspec(naked) ToWideChar_Hook()
 
 		// If DBCS Convert to WideChar
 		xor edx, edx;
-		mov dword ptr ss : [ebp - 0x8] , edx;	// Cls MultiByteStr Buffer
-		mov dword ptr ss : [ebp - 0xC] , edx;	// Cls WideCharStr Buffer
-		mov word ptr ss : [ebp - 0x8] , ax;		// Write MultiByteStr
-		push 0x1;								// Param6: cchWideChar
-		lea eax, ss: [ebp - 0xC] ;				// &WideCharStr
-		push eax;								// Param5: lpWideCharStr
-		push 0x2;								// Param4: cbMultiByte
-		lea ecx, ss: [ebp - 0x8] ;				// &MultiByteStr
-		push ecx;								// Param3: lpMultiByteStr
-		push 0;									// Param2: dwFlags
-		push 0x3A4;								// Param1: CodePage
+		mov dword ptr ss : [ebp - 0x8] , edx;   // Cls MultiByteStr Buffer
+		mov dword ptr ss : [ebp - 0xC] , edx;   // Cls WideCharStr Buffer
+		mov word ptr ss : [ebp - 0x8] , ax;     // Write MultiByteStr
+		push 0x1;                               // Param6: cchWideChar
+		lea eax, ss: [ebp - 0xC] ;              // &WideCharStr
+		push eax;                               // Param5: lpWideCharStr
+		push 0x2;                               // Param4: cbMultiByte
+		lea ecx, ss: [ebp - 0x8] ;              // &MultiByteStr
+		push ecx;                               // Param3: lpMultiByteStr
+		push 0;                                 // Param2: dwFlags
+		push 0x3A4;                             // Param1: CodePage
 		call MultiByteToWideChar;
 		mov edx, dword ptr ss : [ebp - 0xC] ;
 		mov dword ptr ss : [ebp - 0x8] , edx;
-		mov dword ptr ss : [ebp - 0x4] , edx; // Out Buffer
+		mov dword ptr ss : [ebp - 0x4] , edx;   // Out Buffer
 
 	Not_DBCS:
 		ret;
