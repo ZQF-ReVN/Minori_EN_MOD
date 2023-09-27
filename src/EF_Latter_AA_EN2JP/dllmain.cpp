@@ -1,4 +1,6 @@
-﻿#include "../../lib/RxHook/RxHook.h"
+﻿#include "../../lib/RxHook/include/API.h"
+#include "../../lib/RxHook/include/Mem.h"
+#include "../../lib/RxHook/include/Hook.h"
 
 using namespace Rut;
 

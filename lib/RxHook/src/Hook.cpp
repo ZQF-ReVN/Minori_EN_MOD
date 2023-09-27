@@ -1,5 +1,5 @@
-﻿#include "Write.h"
-#include "Mem.h"
+﻿#include "../include/Hook.h"
+#include "../include/Mem.h"
 
 #include <Windows.h>
 #include <detours.h>

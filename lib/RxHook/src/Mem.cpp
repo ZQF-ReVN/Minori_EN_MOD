@@ -1,4 +1,6 @@
-﻿#include "Mem.h"
+﻿#include "../include/Mem.h"
+
+#include <Windows.h>
 
 
 namespace Rut::RxHook
@@ -28,7 +30,7 @@ namespace Rut::RxHook
 		if (is_set == false) { MessageBoxW(0, L"SetMemoryAccess Error!", 0, 0); ExitProcess(-1); }
 	}
 
-	DWORD MemSearch(DWORD pFind, SIZE_T szFind, PBYTE pToFind, SIZE_T szToFind, BOOL backward)
+	uint32_t MemSearch(uint32_t pFind, size_t szFind, uint8_t* pToFind, size_t szToFind, bool backward)
 	{
 		if ((pFind >= 0x7FFF0000) || (pFind <= 0x00010000) || !szToFind) return NULL;
 
@@ -48,7 +50,7 @@ namespace Rut::RxHook
 		}
 
 		MessageBoxW(NULL, L"MemSearch Failed!!", NULL, NULL);
-		ExitProcess(0);
+		ExitProcess(-1);
 		return NULL;
 	}
 

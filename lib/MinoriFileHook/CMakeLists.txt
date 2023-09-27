@@ -10,7 +10,7 @@ link_libraries(RxHook)
 
 # Set Source File Path
 list(APPEND SRC_FILE 
-    "${CMAKE_CURRENT_SOURCE_DIR}/MinoriFileHook.cpp" 
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/MinoriFileHook.cpp" 
 )
 
 # Set Current Library

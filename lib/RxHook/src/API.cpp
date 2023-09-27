@@ -1,6 +1,6 @@
-﻿#include "API.h"
-#include "Write.h"
-#include "API_DEF.h"
+﻿#include "../include/API.h"
+#include "../include/Hook.h"
+#include "../include/API_DEF.h"
 
 #include <Windows.h>
 

@@ -1,7 +1,5 @@
 ﻿#pragma once
 #include <cstdint>
-#include <Windows.h>
-
 
 
 namespace Rut::RxHook
@@ -11,7 +9,7 @@ namespace Rut::RxHook
 	void SysMemFill(void* pAddress, uint8_t ucValue, size_t nSize);
 	void SysMemAccess(void* pAddress, size_t nSize, uint32_t uiAccess);
 
-	DWORD MemSearch(DWORD pFind, SIZE_T szFind, PBYTE pToFind, SIZE_T szToFind, BOOL backward = FALSE);
+	uint32_t MemSearch(uint32_t pFind, size_t szFind, uint8_t* pToFind, size_t szToFind, bool backward = false);
 }
 
 
