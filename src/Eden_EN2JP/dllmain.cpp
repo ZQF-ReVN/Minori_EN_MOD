@@ -1,4 +1,4 @@
-#include "../../lib/Rhk/RxHook.h"
+﻿#include "../../lib/RxHook/RxHook.h"
 
 using namespace Rut;
 
@@ -62,7 +62,7 @@ VOID StartHook()
 	DWORD image_base = (DWORD)GetModuleHandleW(NULL);
 
 	// Hook Font
-	RxHook::HookCreateFontA(0x80, "MS Mincho");
+	RxHook::HookCreateFontA(0x80, "思源黑体 Heavy");
 
 	// Hook Read Char
 	RxHook::SetHookCode_Call(image_base + 0x10EFD7, (DWORD)ReadChar_Hook, 0x6);
@@ -77,7 +77,7 @@ VOID StartHook()
 	RxHook::SysMemWrite((LPVOID)(image_base + 0x168DF0), bracket_l, sizeof(bracket_l));
 
 	// Skip Map Char and Read DBCS
-	static BYTE asm_map_char[] =
+	static BYTE ams_skip_map[] =
 	{
 		0xC1, 0xEB, 0x08,                           // shr ebx, 0x8
 		0x88, 0xC7,                                 // mov bh, al
@@ -85,7 +85,7 @@ VOID StartHook()
 		0x66, 0x89, 0x5D, 0x0C,                     // mov word ptr ss:[ebp+0xC], bx
 		0x90,0x90,0x90                              // Nop
 	};
-	RxHook::SysMemWrite((LPVOID)(image_base + 0xC29A5), asm_map_char, sizeof(asm_map_char));
+	RxHook::SysMemWrite((LPVOID)(image_base + 0xC29A5), ams_skip_map, sizeof(ams_skip_map));
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)
@@ -93,11 +93,17 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReser
 	switch (ul_reason_for_call)
 	{
 	case DLL_PROCESS_ATTACH:
+		//Add Font
+		::AddFontResourceExW(L"SourceHanSansSC-Heavy.otf", FR_PRIVATE, NULL);
 		StartHook();
 		break;
 	case DLL_THREAD_ATTACH:
+		break;
 	case DLL_THREAD_DETACH:
+		break;
 	case DLL_PROCESS_DETACH:
+		//Remove Font
+		::RemoveFontResourceExW(L"SourceHanSansSC-Heavy.otf", FR_PRIVATE, NULL);
 		break;
 	}
 	return TRUE;

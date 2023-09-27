@@ -1,6 +1,6 @@
 ﻿#include "MinoriFileHook.h"
 #include "MinoriFileHook_DEF.h"
-#include "../Rhk/RxHook.h"
+#include "../../lib/RxHook/RxHook.h"
 
 #include <Windows.h>
 

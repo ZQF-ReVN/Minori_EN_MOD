@@ -2,9 +2,7 @@
 #include "Mem.h"
 
 #include <Windows.h>
-
-#include "../../../third/detours/include/detours.h"
-#pragma comment(lib,"../../third/detours/lib.X86/detours.lib")
+#include <detours.h>
 
 
 namespace Rut::RxHook
@@ -16,7 +14,7 @@ namespace Rut::RxHook
 		SysMemWrite((LPVOID)uiRawAddress, &code, sizeof(code));
 
 		size_t fil_size = szHookCode - 5;
-		if (fil_size) { SysMemSet((void*)(uiRawAddress + 5), 0x90, fil_size); }
+		if (fil_size) { SysMemFill((void*)(uiRawAddress + 5), 0x90, fil_size); }
 	}
 
 	void SetHookCode_Call(std::uintptr_t uiRawAddress, std::uintptr_t uiNewAddress, std::size_t szHookCode)
@@ -26,7 +24,7 @@ namespace Rut::RxHook
 		SysMemWrite((LPVOID)uiRawAddress, &code, sizeof(code));
 
 		size_t fil_size = szHookCode - 5;
-		if (fil_size) { SysMemSet((void*)(uiRawAddress + 5), 0x90, fil_size); }
+		if (fil_size) { SysMemFill((void*)(uiRawAddress + 5), 0x90, fil_size); }
 	}
 
 	bool SetHook(uint32_t uiRawAddr, uint32_t uiTarAddr, uint32_t szRawSize)
@@ -37,9 +35,9 @@ namespace Rut::RxHook
 		BYTE retJmp[] = { 0xE9,0x00,0x00,0x00,0x00 };
 		BYTE tarCal[] = { 0xE8,0x00,0x00,0x00,0x00 };
 
-		BOOL protect = VirtualProtect((LPVOID)uiRawAddr, 0x1000, PAGE_EXECUTE_READWRITE, &old);
+		SysMemAccess((LPVOID)uiRawAddr, 0x1000, PAGE_EXECUTE_READWRITE);
 		PBYTE alloc = (PBYTE)VirtualAlloc(NULL, 0x1000, MEM_COMMIT, PAGE_EXECUTE_READWRITE);
-		if (alloc && protect)
+		if (alloc)
 		{
 			//Copy the Code for the original address to alloc address
 			memcpy(alloc, (PVOID)uiRawAddr, szRawSize);

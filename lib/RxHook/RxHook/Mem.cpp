@@ -15,7 +15,7 @@ namespace Rut::RxHook
 		memcpy(pAddress, pBuffer, nSize);
 	}
 
-	void SysMemSet(void* pAddress, uint8_t ucValue, size_t nSize)
+	void SysMemFill(void* pAddress, uint8_t ucValue, size_t nSize)
 	{
 		SysMemAccess(pAddress, nSize, PAGE_EXECUTE_READWRITE);
 		memset(pAddress, ucValue, nSize);
