@@ -1,5 +1,5 @@
-﻿#include "../include/Hook.h"
-#include "../include/Mem.h"
+﻿#include "Hook.h"
+#include "Mem.h"
 
 #include <Windows.h>
 #include <detours.h>

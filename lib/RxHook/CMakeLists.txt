@@ -1,4 +1,4 @@
-# Library Name
+﻿# Library Name
 set(PROJECT_NAME RxHook)
 
 # Cpp Standard
